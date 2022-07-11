@@ -26,12 +26,14 @@ extension FeaturedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "popularCell", for: indexPath) as? PopularCollectionViewCell
+        if let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "popularCell", for: indexPath) as? PopularCollectionViewCell{
+            
+            celula.titleLabel.text = "Tituro do Filme"
+            celula.movieImage.image = UIImage()
+            return celula
+        }
         
-        celula?.titleLabel.text = "Tituro do Filme"
-        celula?.movieImage.image = UIImage()
-        
-        return celula ?? UICollectionViewCell()
+        return UICollectionViewCell()
     }
 }
 
