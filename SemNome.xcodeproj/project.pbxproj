@@ -22,6 +22,7 @@
 		27E600FD287DF4F00025EEB5 /* Movie+NowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E600F8287DF4F00025EEB5 /* Movie+NowPlaying.swift */; };
 		27E600FE287DF4F00025EEB5 /* Movie+Popular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E600F9287DF4F00025EEB5 /* Movie+Popular.swift */; };
 		27E600FF287DF4F00025EEB5 /* Movie+Upcoming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E600FA287DF4F00025EEB5 /* Movie+Upcoming.swift */; };
+		27F06D26287E144B0045F4BB /* FeaturedViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F06D25287E144B0045F4BB /* FeaturedViewController+UICollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		27E600F8287DF4F00025EEB5 /* Movie+NowPlaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movie+NowPlaying.swift"; sourceTree = "<group>"; };
 		27E600F9287DF4F00025EEB5 /* Movie+Popular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movie+Popular.swift"; sourceTree = "<group>"; };
 		27E600FA287DF4F00025EEB5 /* Movie+Upcoming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movie+Upcoming.swift"; sourceTree = "<group>"; };
+		27F06D25287E144B0045F4BB /* FeaturedViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeaturedViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				27CCACA42874B0B30027631D /* FeaturedViewController.swift */,
+				27F06D25287E144B0045F4BB /* FeaturedViewController+UICollectionViewDataSource.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				279972C2287C9844000BAF53 /* NowPlayingCollectionViewCell.swift in Sources */,
 				27E600FE287DF4F00025EEB5 /* Movie+Popular.swift in Sources */,
 				279972C0287C9810000BAF53 /* PopularCollectionViewCell.swift in Sources */,
+				27F06D26287E144B0045F4BB /* FeaturedViewController+UICollectionViewDataSource.swift in Sources */,
 				27E600FF287DF4F00025EEB5 /* Movie+Upcoming.swift in Sources */,
 				27E600FC287DF4F00025EEB5 /* Movie+TrendingThisWeek.swift in Sources */,
 				27E600FB287DF4F00025EEB5 /* Movie+TrendingToday.swift in Sources */,
