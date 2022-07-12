@@ -43,9 +43,13 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7W5-6C-LVG">
                                                                         <rect key="frame" x="315" y="0.0" width="67" height="50"/>
                                                                         <color key="backgroundColor" red="0.082352943720000002" green="0.082352943720000002" blue="0.090196087960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <color key="tintColor" red="0.5791855454" green="0.089625261720000002" blue="0.1130185798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.69803923369999998" green="0.67450982329999998" blue="0.67450982329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="See all"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="See all">
+                                                                            <backgroundConfiguration key="background" cornerRadius="24">
+                                                                                <color key="backgroundColor" red="0.50588238240000005" green="0.13725490870000001" blue="0.1294117719" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </backgroundConfiguration>
+                                                                        </buttonConfiguration>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.066666662690000003" green="0.066666662690000003" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -131,9 +135,13 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3d-Pw-uh5">
                                                                         <rect key="frame" x="315" y="0.0" width="67" height="50"/>
                                                                         <color key="backgroundColor" red="0.066666662690000003" green="0.062745101750000004" blue="0.062745101750000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <color key="tintColor" red="0.5791855454" green="0.089625261720000002" blue="0.1130185798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.87058818339999999" green="0.84313726430000002" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="See all"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="See all">
+                                                                            <backgroundConfiguration key="background" cornerRadius="24">
+                                                                                <color key="backgroundColor" red="0.52941179279999995" green="0.14509806040000001" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </backgroundConfiguration>
+                                                                        </buttonConfiguration>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -166,7 +174,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="251" height="114"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P7s-Zg-OWn">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P7s-Zg-OWn">
                                                                             <rect key="frame" x="0.0" y="12" width="60" height="90"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="90" id="VZA-J7-eqT"/>
@@ -235,9 +243,13 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GZ-Wx-gtB">
                                                                         <rect key="frame" x="315" y="0.0" width="67" height="50"/>
                                                                         <color key="backgroundColor" red="0.074509806930000005" green="0.074509806930000005" blue="0.082352943720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <color key="tintColor" red="0.5791855454" green="0.089625261720000002" blue="0.1130185798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" red="0.77647060160000003" green="0.74901962280000001" blue="0.74901962280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="See all"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="See all">
+                                                                            <backgroundConfiguration key="background" cornerRadius="24">
+                                                                                <color key="backgroundColor" red="0.52549022440000004" green="0.14509806040000001" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </backgroundConfiguration>
+                                                                        </buttonConfiguration>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -256,7 +268,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="318" id="hN8-H6-aYx"/>
                                                         </constraints>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8pN-jg-WzP">
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8pN-jg-WzP">
                                                             <size key="itemSize" width="200" height="299"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -270,7 +282,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="299"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xj1-6l-W8d">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xj1-6l-W8d">
                                                                             <rect key="frame" x="8" y="8" width="184" height="260"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="260" id="D52-rm-t93"/>

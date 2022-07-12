@@ -21,6 +21,7 @@ class FeaturedViewController: UIViewController {
         super.viewDidLoad()
         popularCollectionView.dataSource = self
         nowPlayingCollectionView.dataSource = self
+        upComingCollectionView.dataSource = self
         print(popularMovies)
     }
     
@@ -51,6 +52,13 @@ extension FeaturedViewController: UICollectionViewDataSource {
                 celula.titleLabel.text = nowPlayingMovies[indexPath.row].title
                 celula.nowPlayingImage.image = UIImage(named: nowPlayingMovies[indexPath.row].poster)
                 celula.dateLabel.text = nowPlayingMovies[indexPath.row].releaseDate
+                return celula
+            }
+        }else if(collectionView == upComingCollectionView){
+            if let celula = upComingCollectionView.dequeueReusableCell(withReuseIdentifier: "upcomingCell", for: indexPath) as? UpComingCollectionViewCell{
+                celula.titleLabel.text = upcomingMovies[indexPath.row].title
+                celula.upcomingImage.image = UIImage(named: upcomingMovies[indexPath.row].poster)
+                celula.dateLabel.text = upcomingMovies[indexPath.row].releaseDate
                 return celula
             }
         }
