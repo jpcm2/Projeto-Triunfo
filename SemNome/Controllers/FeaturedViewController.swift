@@ -31,8 +31,8 @@ extension FeaturedViewController: UICollectionViewDataSource {
             celula.titleLabel.text = "Tituro do Filme"
             celula.movieImage.image = UIImage()
             return celula
+            
         }
-        
         return UICollectionViewCell()
     }
 }
