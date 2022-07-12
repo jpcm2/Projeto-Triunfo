@@ -9,4 +9,7 @@ import UIKit
 
 class UpComingCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var upcomingImage: UIImageView!
 }
