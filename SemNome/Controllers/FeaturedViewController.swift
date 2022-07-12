@@ -13,23 +13,30 @@ class FeaturedViewController: UIViewController {
     @IBOutlet var nowPlayingCollectionView: UICollectionView!
     @IBOutlet var upComingCollectionView: UICollectionView!
     
+    let popularMovies: [Movie] = Movie.popularMovies()
+    let nowPlayingMovies: [Movie] = Movie.nowPlayingMovies()
+    let upcomingMovies: [Movie] = Movie.upcomingMovies()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         popularCollectionView.dataSource = self
+        print(popularMovies)
     }
+    
 }
 
 extension FeaturedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return popularMovies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "popularCell", for: indexPath) as? PopularCollectionViewCell{
             
-            celula.titleLabel.text = "Tituro do Filme"
-            celula.movieImage.image = UIImage()
+            celula.titleLabel.text = popularMovies[indexPath.row].title
+            celula.movieImage.image = UIImage(named: popularMovies[indexPath.row].poster)
+            
             return celula
             
         }

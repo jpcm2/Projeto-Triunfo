@@ -103,10 +103,10 @@
 		27CCAC9F2874B0B30027631D /* SemNome */ = {
 			isa = PBXGroup;
 			children = (
-				27E600E8287DEDE70025EEB5 /* Model */,
 				27CCACA02874B0B30027631D /* AppDelegate.swift */,
 				27CCACA22874B0B30027631D /* SceneDelegate.swift */,
 				279972C5287C98F6000BAF53 /* Controllers */,
+				27E600E8287DEDE70025EEB5 /* Model */,
 				279972C8287C9E1C000BAF53 /* SupportingFiles */,
 				279972C7287C9A6C000BAF53 /* View */,
 			);
