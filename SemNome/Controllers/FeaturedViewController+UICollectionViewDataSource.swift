@@ -30,33 +30,33 @@ extension FeaturedViewController: UICollectionViewDataSource {
         return UICollectionViewCell()
     }
     
-    fileprivate func makePopularCell(_ indexPath: IndexPath) -> UICollectionViewCell {
-        if let celula = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "popularCell", for: indexPath) as? PopularCollectionViewCell{
+    fileprivate func makePopularCell(_ indexPath: IndexPath) -> PopularCollectionViewCell {
+        if let celula = popularCollectionView.dequeueReusableCell(withReuseIdentifier: PopularCollectionViewCell.cellIdentifier, for: indexPath) as? PopularCollectionViewCell{
             celula.titleLabel.text = popularMovies[indexPath.row].title
             celula.movieImage.image = UIImage(named: popularMovies[indexPath.row].poster)
             return celula
         }
-        return UICollectionViewCell()
+        return PopularCollectionViewCell()
     }
     
-    fileprivate func makeNowPlayingCell(_ indexPath: IndexPath) -> UICollectionViewCell {
-        if let celula = nowPlayingCollectionView.dequeueReusableCell(withReuseIdentifier: "nowPlayingCell", for: indexPath) as? NowPlayingCollectionViewCell{
+    fileprivate func makeNowPlayingCell(_ indexPath: IndexPath) -> NowPlayingCollectionViewCell {
+        if let celula = nowPlayingCollectionView.dequeueReusableCell(withReuseIdentifier: NowPlayingCollectionViewCell.cellIdentifier, for: indexPath) as? NowPlayingCollectionViewCell{
             celula.titleLabel.text = nowPlayingMovies[indexPath.row].title
             celula.nowPlayingImage.image = UIImage(named: nowPlayingMovies[indexPath.row].poster)
-            celula.dateLabel.text = nowPlayingMovies[indexPath.row].releaseDate
+            celula.dateLabel.text = String(nowPlayingMovies[indexPath.row].releaseDate.prefix(4))
             return celula
         }
-        return UICollectionViewCell()
+        return NowPlayingCollectionViewCell()
     }
     
-    fileprivate func makeUpcomingCell(_ indexPath: IndexPath) -> UICollectionViewCell {
-        if let celula = upComingCollectionView.dequeueReusableCell(withReuseIdentifier: "upcomingCell", for: indexPath) as? UpComingCollectionViewCell{
+    fileprivate func makeUpcomingCell(_ indexPath: IndexPath) -> UpComingCollectionViewCell {
+        if let celula = upComingCollectionView.dequeueReusableCell(withReuseIdentifier: UpComingCollectionViewCell.cellIdentifier, for: indexPath) as? UpComingCollectionViewCell{
             celula.titleLabel.text = upcomingMovies[indexPath.row].title
             celula.upcomingImage.image = UIImage(named: upcomingMovies[indexPath.row].poster)
             celula.dateLabel.text = upcomingMovies[indexPath.row].releaseDate
             return celula
         }
-        return UICollectionViewCell()
+        return UpComingCollectionViewCell()
     }
     
 }
