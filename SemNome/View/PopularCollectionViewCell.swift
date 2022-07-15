@@ -14,5 +14,8 @@ class PopularCollectionViewCell: UICollectionViewCell {
     @IBOutlet var movieImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     
-    
+    func setup(title: String, image: UIImage){
+        self.titleLabel.text = title
+        self.movieImage.image = image
+    }
 }

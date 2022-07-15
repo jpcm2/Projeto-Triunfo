@@ -15,5 +15,9 @@ class NowPlayingCollectionViewCell: UICollectionViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     
-    
+    func setup(image: UIImage, date: String, title: String){
+        self.nowPlayingImage.image = image
+        self.dateLabel.text = date
+        self.titleLabel.text = title
+    }
 }

@@ -32,8 +32,8 @@ extension FeaturedViewController: UICollectionViewDataSource {
     
     fileprivate func makePopularCell(_ indexPath: IndexPath) -> PopularCollectionViewCell {
         if let celula = popularCollectionView.dequeueReusableCell(withReuseIdentifier: PopularCollectionViewCell.cellIdentifier, for: indexPath) as? PopularCollectionViewCell{
-            celula.titleLabel.text = popularMovies[indexPath.row].title
-            celula.movieImage.image = UIImage(named: popularMovies[indexPath.row].poster)
+            celula.setup(title: popularMovies[indexPath.item].title,
+                         image: UIImage(named: popularMovies[indexPath.item].backdrop) ?? UIImage())
             return celula
         }
         return PopularCollectionViewCell()
@@ -41,12 +41,10 @@ extension FeaturedViewController: UICollectionViewDataSource {
     
     fileprivate func makeNowPlayingCell(_ indexPath: IndexPath) -> NowPlayingCollectionViewCell {
         if let celula = nowPlayingCollectionView.dequeueReusableCell(withReuseIdentifier: NowPlayingCollectionViewCell.cellIdentifier, for: indexPath) as? NowPlayingCollectionViewCell{
-            let nowPlayingTitle: String = nowPlayingMovies[indexPath.row].title
-            celula.titleLabel.text = nowPlayingTitle
-            let nowPlayingImage: UIImage? = UIImage(named: nowPlayingMovies[indexPath.row].poster)
-            celula.nowPlayingImage.image = nowPlayingImage
-            let nowPlayingDate: String = String(nowPlayingMovies[indexPath.row].releaseDate.prefix(4))
-            celula.dateLabel.text = nowPlayingDate
+            let titleFormatado = String(nowPlayingMovies[indexPath.row].releaseDate.prefix(4))
+            celula.setup(image: UIImage(named: nowPlayingMovies[indexPath.row].poster) ?? UIImage(),
+                         date: titleFormatado,
+                         title: nowPlayingMovies[indexPath.row].title)
             return celula
         }
         return NowPlayingCollectionViewCell()
@@ -54,9 +52,9 @@ extension FeaturedViewController: UICollectionViewDataSource {
     
     fileprivate func makeUpcomingCell(_ indexPath: IndexPath) -> UpComingCollectionViewCell {
         if let celula = upComingCollectionView.dequeueReusableCell(withReuseIdentifier: UpComingCollectionViewCell.cellIdentifier, for: indexPath) as? UpComingCollectionViewCell{
-            celula.titleLabel.text = upcomingMovies[indexPath.row].title
-            celula.upcomingImage.image = UIImage(named: upcomingMovies[indexPath.row].poster)
-            celula.dateLabel.text = upcomingMovies[indexPath.row].releaseDate
+            celula.setup(title: upcomingMovies[indexPath.row].title,
+                         date: upcomingMovies[indexPath.row].releaseDate,
+                         image: UIImage(named: upcomingMovies[indexPath.row].poster) ?? UIImage())
             return celula
         }
         return UpComingCollectionViewCell()
