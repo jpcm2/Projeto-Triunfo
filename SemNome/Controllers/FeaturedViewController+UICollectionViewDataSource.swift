@@ -33,7 +33,13 @@ extension FeaturedViewController: UICollectionViewDataSource {
     fileprivate func makePopularCell(_ indexPath: IndexPath) -> PopularCollectionViewCell {
         if let celula = popularCollectionView.dequeueReusableCell(withReuseIdentifier: PopularCollectionViewCell.cellIdentifier, for: indexPath) as? PopularCollectionViewCell{
             celula.setup(title: popularMovies[indexPath.item].title,
-                         image: UIImage(named: popularMovies[indexPath.item].backdrop) ?? UIImage())
+                         image: UIImage())
+            let movie = popularMovies[indexPath.item]
+            Task{
+                let imageData = await Movie.downloadImageData(withPath: movie.backdropPath)
+                let imagem = UIImage(data: imageData) ?? UIImage()
+                celula.setup(title: movie.title, image: imagem)
+            }
             return celula
         }
         return PopularCollectionViewCell()
@@ -42,7 +48,7 @@ extension FeaturedViewController: UICollectionViewDataSource {
     fileprivate func makeNowPlayingCell(_ indexPath: IndexPath) -> NowPlayingCollectionViewCell {
         if let celula = nowPlayingCollectionView.dequeueReusableCell(withReuseIdentifier: NowPlayingCollectionViewCell.cellIdentifier, for: indexPath) as? NowPlayingCollectionViewCell{
             let titleFormatado = String(nowPlayingMovies[indexPath.row].releaseDate.prefix(4))
-            celula.setup(image: UIImage(named: nowPlayingMovies[indexPath.row].poster) ?? UIImage(),
+            celula.setup(image: UIImage(named: nowPlayingMovies[indexPath.row].posterPath) ?? UIImage(),
                          date: titleFormatado,
                          title: nowPlayingMovies[indexPath.row].title)
             return celula
@@ -54,12 +60,10 @@ extension FeaturedViewController: UICollectionViewDataSource {
         if let celula = upComingCollectionView.dequeueReusableCell(withReuseIdentifier: UpComingCollectionViewCell.cellIdentifier, for: indexPath) as? UpComingCollectionViewCell{
             celula.setup(title: upcomingMovies[indexPath.row].title,
                          date: upcomingMovies[indexPath.row].releaseDate,
-                         image: UIImage(named: upcomingMovies[indexPath.row].poster) ?? UIImage())
+                         image: UIImage(named: upcomingMovies[indexPath.row].posterPath) ?? UIImage())
             return celula
         }
         return UpComingCollectionViewCell()
     }
     
 }
-
-

@@ -13,7 +13,7 @@ class FeaturedViewController: UIViewController {
     @IBOutlet var nowPlayingCollectionView: UICollectionView!
     @IBOutlet var upComingCollectionView: UICollectionView!
     
-    let popularMovies: [Movie] = Movie.popularMovies()
+    var popularMovies: [Movie] = []
     let nowPlayingMovies: [Movie] = Movie.nowPlayingMovies()
     let upcomingMovies: [Movie] = Movie.upcomingMovies()
     
@@ -25,6 +25,11 @@ class FeaturedViewController: UIViewController {
         popularCollectionView.delegate = self
         nowPlayingCollectionView.delegate = self
         upComingCollectionView.delegate = self
+        
+        Task{
+            self.popularMovies = await Movie.popularMoviesAPI()
+            self.popularCollectionView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
