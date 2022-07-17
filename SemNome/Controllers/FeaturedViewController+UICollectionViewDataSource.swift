@@ -48,9 +48,15 @@ extension FeaturedViewController: UICollectionViewDataSource {
     fileprivate func makeNowPlayingCell(_ indexPath: IndexPath) -> NowPlayingCollectionViewCell {
         if let celula = nowPlayingCollectionView.dequeueReusableCell(withReuseIdentifier: NowPlayingCollectionViewCell.cellIdentifier, for: indexPath) as? NowPlayingCollectionViewCell{
             let titleFormatado = String(nowPlayingMovies[indexPath.row].releaseDate.prefix(4))
-            celula.setup(image: UIImage(named: nowPlayingMovies[indexPath.row].posterPath) ?? UIImage(),
+            celula.setup(image: UIImage(),
                          date: titleFormatado,
                          title: nowPlayingMovies[indexPath.row].title)
+            let movie = nowPlayingMovies[indexPath.item]
+            Task{
+                let imageData = await Movie.downloadImageData(withPath: movie.backdropPath)
+                let imagem = UIImage(data: imageData) ?? UIImage()
+                celula.setup(image: imagem, date: movie.releaseDate, title: movie.title)
+            }
             return celula
         }
         return NowPlayingCollectionViewCell()
@@ -60,7 +66,13 @@ extension FeaturedViewController: UICollectionViewDataSource {
         if let celula = upComingCollectionView.dequeueReusableCell(withReuseIdentifier: UpComingCollectionViewCell.cellIdentifier, for: indexPath) as? UpComingCollectionViewCell{
             celula.setup(title: upcomingMovies[indexPath.row].title,
                          date: upcomingMovies[indexPath.row].releaseDate,
-                         image: UIImage(named: upcomingMovies[indexPath.row].posterPath) ?? UIImage())
+                         image: UIImage())
+            let movie = upcomingMovies[indexPath.row]
+            Task{
+                let imageData = await Movie.downloadImageData(withPath: movie.backdropPath)
+                let imagem = UIImage(data: imageData) ?? UIImage()
+                celula.setup(title: movie.title, date: movie.releaseDate, image: imagem)
+            }
             return celula
         }
         return UpComingCollectionViewCell()

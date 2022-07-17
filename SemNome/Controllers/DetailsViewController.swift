@@ -4,7 +4,6 @@
 //
 //  Created by jpcm2 on 13/07/22.
 //
-
 import UIKit
 
 class DetailsViewController: UIViewController {
@@ -24,12 +23,14 @@ class DetailsViewController: UIViewController {
         Task{
             let imageData = await Movie.downloadImageData(withPath: movie.backdropPath)
             let imagem = UIImage(data: imageData) ?? UIImage()
+            let imagemDataPoster = await Movie.downloadImageData(withPath: movie.posterPath)
+            let posterImage = UIImage(data: imagemDataPoster) ?? UIImage()
+            self.ratingImage.image = posterImage
             self.bannerImage.image = imagem
         }
         
         self.title = movie.title
         self.titleLabel.text = movie.title
-        self.ratingImage.image = UIImage(named: movie.posterPath)
         self.ratingLabel.text = "Rating: \(movie.voteAverage)/10"
         self.overviewLabel.text = movie.overview
     }

@@ -4,7 +4,6 @@
 //
 //  Created by jpcm2 on 05/07/22.
 //
-
 import UIKit
 
 class FeaturedViewController: UIViewController {
@@ -14,8 +13,8 @@ class FeaturedViewController: UIViewController {
     @IBOutlet var upComingCollectionView: UICollectionView!
     
     var popularMovies: [Movie] = []
-    let nowPlayingMovies: [Movie] = Movie.nowPlayingMovies()
-    let upcomingMovies: [Movie] = Movie.upcomingMovies()
+    var nowPlayingMovies: [Movie] = []
+    var upcomingMovies: [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +28,10 @@ class FeaturedViewController: UIViewController {
         Task{
             self.popularMovies = await Movie.popularMoviesAPI()
             self.popularCollectionView.reloadData()
+            self.nowPlayingMovies = await Movie.popularMoviesAPI()
+            self.nowPlayingCollectionView.reloadData()
+            self.upcomingMovies = await Movie.upcomingMoviesAPI()
+            self.upComingCollectionView.reloadData()
         }
     }
     
