@@ -17,4 +17,17 @@ struct Movie: Codable {
     let releaseDate: String
     let overview: String
     let genres: [String]?
+    
+    static func getMonth(releaseDate: String) -> String{
+        let mesAno: String = String(releaseDate.suffix(5))
+        let mes = String(mesAno.prefix(2))
+        let meses: [String] = ["Janeiro", "Feveiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+        let mesInt = Int(mes) ?? 0
+        return String(meses[mesInt - 1].prefix(3))
+    }
+    
+    static func getDay(releaseDate: String) -> String{
+        print(String(releaseDate.suffix(2)))
+        return String(releaseDate.suffix(2))
+    }
 }

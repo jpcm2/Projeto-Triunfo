@@ -67,7 +67,7 @@ extension Movie {
     static func downloadImageData(withPath: String) async -> Data {
         let urlString = "https://image.tmdb.org/t/p/w780\(withPath)"
         let url: URL = URL(string: urlString)!
-        
+        print(urlString)
         let session = URLSession.shared
         
         do{
@@ -77,6 +77,41 @@ extension Movie {
             print(error)
         }
         return Data()
+    }
+    
+    static func trendingTodayAPI() async -> [Movie] {
+        var components = Movie.urlComponents
+        components.path = "/3/trending/movie/day"
+        components.queryItems = [URLQueryItem(name: "api_key", value: Movie.apiKey)]
+        print(components )
+        let session = URLSession.shared
+        do {
+            let (data, response) = try await session.data(from: components.url!)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let movieResult = try decoder.decode(MovieResponse.self, from: data) // Primeiro argumento -> Tipo para qual quero decodificar, from --> variavel que está armazenando o JSON. Movie.self para indicar que ta voltando o tipo Movie.
+            return  movieResult.results
+        }catch{
+            print(error)
+        }
+        return []
+    }
+    
+    static func trendingWeekAPI() async -> [Movie] {
+        var components = Movie.urlComponents
+        components.path = "/3/trending/movie"
+        components.queryItems = [URLQueryItem(name: "api_key", value: Movie.apiKey)]
+        let session = URLSession.shared
+        do {
+            let (data, response) = try await session.data(from: components.url!)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let movieResult = try decoder.decode(MovieResponse.self, from: data) // Primeiro argumento -> Tipo para qual quero decodificar, from --> variavel que está armazenando o JSON. Movie.self para indicar que ta voltando o tipo Movie.
+            return  movieResult.results
+        }catch{
+            print(error)
+        }
+        return []
     }
     
     // MARK: - Recuperando a chave da API de um arquivo que não está visível no repositório online

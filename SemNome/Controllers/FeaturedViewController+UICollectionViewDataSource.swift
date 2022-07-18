@@ -64,14 +64,17 @@ extension FeaturedViewController: UICollectionViewDataSource {
     
     fileprivate func makeUpcomingCell(_ indexPath: IndexPath) -> UpComingCollectionViewCell {
         if let celula = upComingCollectionView.dequeueReusableCell(withReuseIdentifier: UpComingCollectionViewCell.cellIdentifier, for: indexPath) as? UpComingCollectionViewCell{
+            let mes: String = Movie.getMonth(releaseDate: upcomingMovies[indexPath.row].releaseDate)
+            let dia: String = Movie.getDay(releaseDate: upcomingMovies[indexPath.row].releaseDate)
+            print(dia)
             celula.setup(title: upcomingMovies[indexPath.row].title,
-                         date: upcomingMovies[indexPath.row].releaseDate,
+                         date: "\(mes) \(dia)",
                          image: UIImage())
             let movie = upcomingMovies[indexPath.row]
             Task{
                 let imageData = await Movie.downloadImageData(withPath: movie.backdropPath)
                 let imagem = UIImage(data: imageData) ?? UIImage()
-                celula.setup(title: movie.title, date: movie.releaseDate, image: imagem)
+                celula.setup(title: movie.title, date: "\(mes) \(dia)", image: imagem)
             }
             return celula
         }
