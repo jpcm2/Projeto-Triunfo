@@ -23,14 +23,15 @@ class DetailsViewController: UIViewController {
             return
         }
         Task{
-            let imageData = await Movie.downloadImageData(withPath: movie.backdropPath)
+            let imageData = await Movie.downloadImageData(withPath: movie.backdropPath ?? "")
             let imagem = UIImage(data: imageData) ?? UIImage()
-            let imagemDataPoster = await Movie.downloadImageData(withPath: movie.posterPath)
+            let imagemDataPoster = await Movie.downloadImageData(withPath: movie.posterPath ?? "")
             let posterImage = UIImage(data: imagemDataPoster) ?? UIImage()
             self.ratingImage.image = posterImage
             self.bannerImage.image = imagem
         }
         
+        self.title = movie.title
         self.titleLabel.text = movie.title
         self.ratingLabel.text = "Rating: \(movie.voteAverage)/10"
         self.overviewLabel.text = movie.overview

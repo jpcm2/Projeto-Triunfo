@@ -36,7 +36,7 @@ extension FeaturedViewController: UICollectionViewDataSource {
                          image: UIImage())
             let movie = popularMovies[indexPath.item]
             Task{
-                let imageData = await Movie.downloadImageData(withPath: movie.backdropPath)
+                let imageData = await Movie.downloadImageData(withPath: movie.backdropPath ?? "")
                 let imagem = UIImage(data: imageData) ?? UIImage()
                 celula.setup(title: movie.title, image: imagem)
             }
@@ -47,15 +47,15 @@ extension FeaturedViewController: UICollectionViewDataSource {
     
     fileprivate func makeNowPlayingCell(_ indexPath: IndexPath) -> NowPlayingCollectionViewCell {
         if let celula = nowPlayingCollectionView.dequeueReusableCell(withReuseIdentifier: NowPlayingCollectionViewCell.cellIdentifier, for: indexPath) as? NowPlayingCollectionViewCell{
-            let titleFormatado = String(nowPlayingMovies[indexPath.row].releaseDate.prefix(4))
+            let titleFormatado = String((nowPlayingMovies[indexPath.item].releaseDate ?? "").prefix(4))
             celula.setup(image: UIImage(),
                          date: titleFormatado,
                          title: nowPlayingMovies[indexPath.row].title)
             let movie = nowPlayingMovies[indexPath.item]
             Task{
-                let imageData = await Movie.downloadImageData(withPath: movie.backdropPath)
+                let imageData = await Movie.downloadImageData(withPath: movie.backdropPath ?? "")
                 let imagem = UIImage(data: imageData) ?? UIImage()
-                celula.setup(image: imagem, date: movie.releaseDate, title: movie.title)
+                celula.setup(image: imagem, date: movie.releaseDate ?? "", title: movie.title)
             }
             return celula
         }
@@ -64,14 +64,14 @@ extension FeaturedViewController: UICollectionViewDataSource {
     
     fileprivate func makeUpcomingCell(_ indexPath: IndexPath) -> UpComingCollectionViewCell {
         if let celula = upComingCollectionView.dequeueReusableCell(withReuseIdentifier: UpComingCollectionViewCell.cellIdentifier, for: indexPath) as? UpComingCollectionViewCell{
-            let mes: String = Movie.getMonth(releaseDate: upcomingMovies[indexPath.row].releaseDate)
-            let dia: String = Movie.getDay(releaseDate: upcomingMovies[indexPath.row].releaseDate)
+            let mes: String = Movie.getMonth(releaseDate: upcomingMovies[indexPath.row].releaseDate ?? "")
+            let dia: String = Movie.getDay(releaseDate: upcomingMovies[indexPath.row].releaseDate ?? "")
             celula.setup(title: upcomingMovies[indexPath.row].title,
                          date: "\(mes) \(dia)",
                          image: UIImage())
             let movie = upcomingMovies[indexPath.row]
             Task{
-                let imageData = await Movie.downloadImageData(withPath: movie.backdropPath)
+                let imageData = await Movie.downloadImageData(withPath: movie.backdropPath ?? "")
                 let imagem = UIImage(data: imageData) ?? UIImage()
                 celula.setup(title: movie.title, date: "\(mes) \(dia)", image: imagem)
             }

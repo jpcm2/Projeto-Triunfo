@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2718692C2885E435000444CD /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718692B2885E435000444CD /* TrendingViewController.swift */; };
-		2718692E2885E55B000444CD /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718692D2885E55B000444CD /* TrendingTableViewCell.swift */; };
+		2718692E2885E55B000444CD /* Trending-SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718692D2885E55B000444CD /* Trending-SearchTableViewCell.swift */; };
 		2728AF1C287F3EFD00C50298 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728AF1B287F3EFD00C50298 /* DetailsViewController.swift */; };
 		2728AF1E287F47E500C50298 /* FeaturedViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728AF1D287F47E500C50298 /* FeaturedViewController+UICollectionViewDelegate.swift */; };
 		277A69142885DBA5009AB407 /* TMDB-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 277A69132885DBA5009AB407 /* TMDB-Info.plist */; };
@@ -17,6 +17,15 @@
 		279972C4287C988C000BAF53 /* UpComingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279972C3287C988C000BAF53 /* UpComingCollectionViewCell.swift */; };
 		27A3392A2885EE1900492F56 /* TrendingViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A339292885EE1900492F56 /* TrendingViewController+DataSource.swift */; };
 		27A3392C2885EE7D00492F56 /* TrendingViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3392B2885EE7D00492F56 /* TrendingViewController+Delegate.swift */; };
+		27AA4850288735900083F086 /* SeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA484F288735900083F086 /* SeeAllViewController.swift */; };
+		27AA485228873CF60083F086 /* SeeAll+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA485128873CF60083F086 /* SeeAll+UITableViewDataSource.swift */; };
+		27AA485428873D220083F086 /* SeeAllViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA485328873D220083F086 /* SeeAllViewController+UITableViewDelegate.swift */; };
+		27AA4856288743D80083F086 /* ImageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA4855288743D80083F086 /* ImageViewViewController.swift */; };
+		27B8ECEE28871E0300A11B45 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8ECED28871E0300A11B45 /* SearchViewController.swift */; };
+		27B8ECF028871F6F00A11B45 /* SearchViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8ECEF28871F6F00A11B45 /* SearchViewController+DataSource.swift */; };
+		27B8ECF228871FA800A11B45 /* SearchViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8ECF128871FA800A11B45 /* SearchViewController+Delegate.swift */; };
+		27B8ECF42887231D00A11B45 /* SearchViewController+SearchResultingUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8ECF32887231D00A11B45 /* SearchViewController+SearchResultingUpdating.swift */; };
+		27B8ECF6288728FA00A11B45 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8ECF5288728FA00A11B45 /* TableViewCell.swift */; };
 		27CCACA12874B0B30027631D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CCACA02874B0B30027631D /* AppDelegate.swift */; };
 		27CCACA32874B0B30027631D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CCACA22874B0B30027631D /* SceneDelegate.swift */; };
 		27CCACA52874B0B30027631D /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CCACA42874B0B30027631D /* FeaturedViewController.swift */; };
@@ -36,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		2718692B2885E435000444CD /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
-		2718692D2885E55B000444CD /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
+		2718692D2885E55B000444CD /* Trending-SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trending-SearchTableViewCell.swift"; sourceTree = "<group>"; };
 		2728AF1B287F3EFD00C50298 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2728AF1D287F47E500C50298 /* FeaturedViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeaturedViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		277A69132885DBA5009AB407 /* TMDB-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TMDB-Info.plist"; sourceTree = "<group>"; };
@@ -45,6 +54,15 @@
 		279972C3287C988C000BAF53 /* UpComingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingCollectionViewCell.swift; sourceTree = "<group>"; };
 		27A339292885EE1900492F56 /* TrendingViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrendingViewController+DataSource.swift"; sourceTree = "<group>"; };
 		27A3392B2885EE7D00492F56 /* TrendingViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrendingViewController+Delegate.swift"; sourceTree = "<group>"; };
+		27AA484F288735900083F086 /* SeeAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllViewController.swift; sourceTree = "<group>"; };
+		27AA485128873CF60083F086 /* SeeAll+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SeeAll+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		27AA485328873D220083F086 /* SeeAllViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SeeAllViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		27AA4855288743D80083F086 /* ImageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewViewController.swift; sourceTree = "<group>"; };
+		27B8ECED28871E0300A11B45 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		27B8ECEF28871F6F00A11B45 /* SearchViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+DataSource.swift"; sourceTree = "<group>"; };
+		27B8ECF128871FA800A11B45 /* SearchViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Delegate.swift"; sourceTree = "<group>"; };
+		27B8ECF32887231D00A11B45 /* SearchViewController+SearchResultingUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+SearchResultingUpdating.swift"; sourceTree = "<group>"; };
+		27B8ECF5288728FA00A11B45 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		27CCAC9D2874B0B30027631D /* SemNome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SemNome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CCACA02874B0B30027631D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27CCACA22874B0B30027631D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,12 +97,20 @@
 			isa = PBXGroup;
 			children = (
 				27CCACA42874B0B30027631D /* FeaturedViewController.swift */,
+				27AA484F288735900083F086 /* SeeAllViewController.swift */,
 				27F06D25287E144B0045F4BB /* FeaturedViewController+UICollectionViewDataSource.swift */,
 				2728AF1B287F3EFD00C50298 /* DetailsViewController.swift */,
 				2728AF1D287F47E500C50298 /* FeaturedViewController+UICollectionViewDelegate.swift */,
 				2718692B2885E435000444CD /* TrendingViewController.swift */,
 				27A339292885EE1900492F56 /* TrendingViewController+DataSource.swift */,
 				27A3392B2885EE7D00492F56 /* TrendingViewController+Delegate.swift */,
+				27B8ECED28871E0300A11B45 /* SearchViewController.swift */,
+				27B8ECEF28871F6F00A11B45 /* SearchViewController+DataSource.swift */,
+				27B8ECF128871FA800A11B45 /* SearchViewController+Delegate.swift */,
+				27B8ECF32887231D00A11B45 /* SearchViewController+SearchResultingUpdating.swift */,
+				27AA485128873CF60083F086 /* SeeAll+UITableViewDataSource.swift */,
+				27AA485328873D220083F086 /* SeeAllViewController+UITableViewDelegate.swift */,
+				27AA4855288743D80083F086 /* ImageViewViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -97,7 +123,8 @@
 				279972C1287C9844000BAF53 /* NowPlayingCollectionViewCell.swift */,
 				279972C3287C988C000BAF53 /* UpComingCollectionViewCell.swift */,
 				27CCACAB2874B0B50027631D /* LaunchScreen.storyboard */,
-				2718692D2885E55B000444CD /* TrendingTableViewCell.swift */,
+				2718692D2885E55B000444CD /* Trending-SearchTableViewCell.swift */,
+				27B8ECF5288728FA00A11B45 /* TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -234,20 +261,29 @@
 				27E600FE287DF4F00025EEB5 /* Movie+Popular.swift in Sources */,
 				279972C0287C9810000BAF53 /* PopularCollectionViewCell.swift in Sources */,
 				27F06D26287E144B0045F4BB /* FeaturedViewController+UICollectionViewDataSource.swift in Sources */,
+				27AA4850288735900083F086 /* SeeAllViewController.swift in Sources */,
 				27E600FF287DF4F00025EEB5 /* Movie+Upcoming.swift in Sources */,
 				27E600FC287DF4F00025EEB5 /* Movie+TrendingThisWeek.swift in Sources */,
 				27E600FB287DF4F00025EEB5 /* Movie+TrendingToday.swift in Sources */,
 				279972C4287C988C000BAF53 /* UpComingCollectionViewCell.swift in Sources */,
+				27AA485428873D220083F086 /* SeeAllViewController+UITableViewDelegate.swift in Sources */,
 				27E600FD287DF4F00025EEB5 /* Movie+NowPlaying.swift in Sources */,
 				27CCACA52874B0B30027631D /* FeaturedViewController.swift in Sources */,
+				27B8ECEE28871E0300A11B45 /* SearchViewController.swift in Sources */,
+				27B8ECF6288728FA00A11B45 /* TableViewCell.swift in Sources */,
 				27A3392A2885EE1900492F56 /* TrendingViewController+DataSource.swift in Sources */,
+				27AA4856288743D80083F086 /* ImageViewViewController.swift in Sources */,
+				27B8ECF028871F6F00A11B45 /* SearchViewController+DataSource.swift in Sources */,
 				2728AF1E287F47E500C50298 /* FeaturedViewController+UICollectionViewDelegate.swift in Sources */,
 				2728AF1C287F3EFD00C50298 /* DetailsViewController.swift in Sources */,
+				27B8ECF228871FA800A11B45 /* SearchViewController+Delegate.swift in Sources */,
 				27E8A2D52881F8B90008B4B8 /* MovieResponse.swift in Sources */,
 				27CCACA12874B0B30027631D /* AppDelegate.swift in Sources */,
+				27B8ECF42887231D00A11B45 /* SearchViewController+SearchResultingUpdating.swift in Sources */,
 				27CCACA32874B0B30027631D /* SceneDelegate.swift in Sources */,
-				2718692E2885E55B000444CD /* TrendingTableViewCell.swift in Sources */,
+				2718692E2885E55B000444CD /* Trending-SearchTableViewCell.swift in Sources */,
 				27E8A2D32881EC560008B4B8 /* Movie+API.swift in Sources */,
+				27AA485228873CF60083F086 /* SeeAll+UITableViewDataSource.swift in Sources */,
 				2718692C2885E435000444CD /* TrendingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

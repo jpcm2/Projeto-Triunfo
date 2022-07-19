@@ -112,6 +112,23 @@ extension Movie {
         return []
     }
     
+    static func searchAPI(busca : String) async -> [Movie] {
+        var components = Movie.urlComponents
+        components.path = "/3/search/movie"
+        components.queryItems = [URLQueryItem(name: "api_key", value: Movie.apiKey), URLQueryItem(name: "query", value: busca)]
+        let session = URLSession.shared
+        print(components)
+        do {
+            let (data, response) = try await session.data(from: components.url!)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let movieResult = try decoder.decode(MovieResponse.self, from: data) // Primeiro argumento -> Tipo para qual quero decodificar, from --> variavel que está armazenando o JSON. Movie.self para indicar que ta voltando o tipo Movie.
+            return  movieResult.results
+        }catch{
+            print(error)
+        }
+        return []
+    }
     // MARK: - Recuperando a chave da API de um arquivo que não está visível no repositório online
     static var apiKey: String {
         guard let url = Bundle.main.url(forResource: "TMDB-Info", withExtension: "plist") else {

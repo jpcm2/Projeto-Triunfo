@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendingTableViewCell: UITableViewCell {
+class TrendingSearchTableViewCell: UITableViewCell {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var yearLabel: UILabel!

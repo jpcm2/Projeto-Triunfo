@@ -19,23 +19,23 @@ extension TrendingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         if(state == 0){
-            let cell = trendingTableView.dequeueReusableCell(withIdentifier: "trendingCell", for: indexPath) as! TrendingTableViewCell
+            let cell = trendingTableView.dequeueReusableCell(withIdentifier: "trendingCell", for: indexPath) as! TrendingSearchTableViewCell
             let movie = trendingMoviesToday[indexPath.item]
-        cell.setup(title: movie.title, date: String(trendingMoviesToday[indexPath.item].releaseDate.prefix(4)), image: UIImage())
+        cell.setup(title: movie.title, date: String((trendingMoviesThisWeek[indexPath.item].releaseDate ?? "").prefix(4)), image: UIImage())
             Task{
-                let imageData = await Movie.downloadImageData(withPath: movie.posterPath)
+                let imageData = await Movie.downloadImageData(withPath: movie.posterPath ?? "")
                 let imagem = UIImage(data: imageData) ?? UIImage()
-                cell.setup(title: movie.title, date: String(trendingMoviesToday[indexPath.item].releaseDate.prefix(4)), image: imagem)
+                cell.setup(title: movie.title, date: String((trendingMoviesToday[indexPath.item].releaseDate ?? "").prefix(4)), image: imagem)
             }
             return cell
         }else{
-            let cell = trendingTableView.dequeueReusableCell(withIdentifier: "trendingCell", for: indexPath) as! TrendingTableViewCell
+            let cell = trendingTableView.dequeueReusableCell(withIdentifier: "trendingCell", for: indexPath) as! TrendingSearchTableViewCell
             let movie = trendingMoviesThisWeek[indexPath.item]
-        cell.setup(title: movie.title, date: String(trendingMoviesThisWeek[indexPath.item].releaseDate.prefix(4)), image: UIImage())
+        cell.setup(title: movie.title, date: String((trendingMoviesThisWeek[indexPath.item].releaseDate ?? "").prefix(4)), image: UIImage())
             Task{
-                let imageData = await Movie.downloadImageData(withPath: movie.posterPath)
+                let imageData = await Movie.downloadImageData(withPath: movie.posterPath ?? "")
                 let imagem = UIImage(data: imageData) ?? UIImage()
-                cell.setup(title: movie.title, date: String(trendingMoviesThisWeek[indexPath.item].releaseDate.prefix(4)), image: imagem)
+                cell.setup(title: movie.title, date: String((trendingMoviesThisWeek[indexPath.item].releaseDate ?? "").prefix(4)), image: imagem)
             }
             return cell
         }
