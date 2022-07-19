@@ -66,7 +66,6 @@ extension FeaturedViewController: UICollectionViewDataSource {
         if let celula = upComingCollectionView.dequeueReusableCell(withReuseIdentifier: UpComingCollectionViewCell.cellIdentifier, for: indexPath) as? UpComingCollectionViewCell{
             let mes: String = Movie.getMonth(releaseDate: upcomingMovies[indexPath.row].releaseDate)
             let dia: String = Movie.getDay(releaseDate: upcomingMovies[indexPath.row].releaseDate)
-            print(dia)
             celula.setup(title: upcomingMovies[indexPath.row].title,
                          date: "\(mes) \(dia)",
                          image: UIImage())

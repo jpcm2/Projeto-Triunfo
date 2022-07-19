@@ -67,7 +67,6 @@ extension Movie {
     static func downloadImageData(withPath: String) async -> Data {
         let urlString = "https://image.tmdb.org/t/p/w780\(withPath)"
         let url: URL = URL(string: urlString)!
-        print(urlString)
         let session = URLSession.shared
         
         do{
@@ -83,7 +82,6 @@ extension Movie {
         var components = Movie.urlComponents
         components.path = "/3/trending/movie/day"
         components.queryItems = [URLQueryItem(name: "api_key", value: Movie.apiKey)]
-        print(components )
         let session = URLSession.shared
         do {
             let (data, response) = try await session.data(from: components.url!)
@@ -97,9 +95,9 @@ extension Movie {
         return []
     }
     
-    static func trendingWeekAPI() async -> [Movie] {
+    static func trendingThisWeekAPI() async -> [Movie] {
         var components = Movie.urlComponents
-        components.path = "/3/trending/movie"
+        components.path = "/3/trending/movie/week"
         components.queryItems = [URLQueryItem(name: "api_key", value: Movie.apiKey)]
         let session = URLSession.shared
         do {

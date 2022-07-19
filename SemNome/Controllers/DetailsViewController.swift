@@ -17,6 +17,8 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.barTintColor = .black
         guard let movie = movie else {
             return
         }
@@ -29,7 +31,6 @@ class DetailsViewController: UIViewController {
             self.bannerImage.image = imagem
         }
         
-        self.title = movie.title
         self.titleLabel.text = movie.title
         self.ratingLabel.text = "Rating: \(movie.voteAverage)/10"
         self.overviewLabel.text = movie.overview

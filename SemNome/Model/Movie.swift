@@ -27,7 +27,6 @@ struct Movie: Codable {
     }
     
     static func getDay(releaseDate: String) -> String{
-        print(String(releaseDate.suffix(2)))
         return String(releaseDate.suffix(2))
     }
 }

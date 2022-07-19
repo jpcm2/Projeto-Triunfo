@@ -9,19 +9,37 @@ import UIKit
 
 class TrendingViewController: UIViewController {
 
-    @IBOutlet var trandingTableVIew: UITableView!
+    @IBOutlet var trendingTableView: UITableView!
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    var state: Int = 0
     
-    var trendingMovies: [Movie] = []
+    var trendingMoviesToday: [Movie] = []
+    var trendingMoviesThisWeek: [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        trandingTableVIew.delegate = self
-        trandingTableVIew.dataSource = self
-        
+        trendingTableView.delegate = self
+        trendingTableView.dataSource = self
         Task {
-            self.trendingMovies = await Movie.trendingTodayAPI()
-            print(trendingMovies)
-            self.trandingTableVIew.reloadData()
+            self.trendingMoviesToday = await Movie.trendingTodayAPI()
+            self.trendingMoviesThisWeek = await Movie.trendingThisWeekAPI()
+            self.trendingTableView.reloadData()
+        }
+    }
+    
+    @IBAction func segmentedControll(_ sender: UISegmentedControl) {
+        if(sender.selectedSegmentIndex == 0){
+            state = 0
+        }else{
+            state = 1
+        }
+        trendingTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailsViewController{
+            let movie = sender as? Movie
+            destination.movie = movie
         }
     }
 }
