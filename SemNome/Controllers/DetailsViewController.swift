@@ -30,10 +30,15 @@ class DetailsViewController: UIViewController {
             self.ratingImage.image = posterImage
             self.bannerImage.image = imagem
         }
-        
         self.title = movie.title
         self.titleLabel.text = movie.title
         self.ratingLabel.text = "Rating: \(movie.voteAverage)/10"
         self.overviewLabel.text = movie.overview
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ImageViewViewController{
+            destination.imagemFromSegue = self.ratingImage.image
+        }
     }
 }

@@ -15,6 +15,7 @@ class ImageViewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(imagemFromSegue)
         self.image.image = imagemFromSegue
     }
 }
