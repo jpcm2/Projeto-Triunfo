@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2707900B28883DC8001DE5E4 /* SeeAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707900A28883DC8001DE5E4 /* SeeAllTableViewCell.swift */; };
 		2718692C2885E435000444CD /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718692B2885E435000444CD /* TrendingViewController.swift */; };
 		2718692E2885E55B000444CD /* Trending-SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718692D2885E55B000444CD /* Trending-SearchTableViewCell.swift */; };
 		2728AF1C287F3EFD00C50298 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728AF1B287F3EFD00C50298 /* DetailsViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2707900A28883DC8001DE5E4 /* SeeAllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllTableViewCell.swift; sourceTree = "<group>"; };
 		2718692B2885E435000444CD /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 		2718692D2885E55B000444CD /* Trending-SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trending-SearchTableViewCell.swift"; sourceTree = "<group>"; };
 		2728AF1B287F3EFD00C50298 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				27CCACAB2874B0B50027631D /* LaunchScreen.storyboard */,
 				2718692D2885E55B000444CD /* Trending-SearchTableViewCell.swift */,
 				27B8ECF5288728FA00A11B45 /* TableViewCell.swift */,
+				2707900A28883DC8001DE5E4 /* SeeAllTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				2728AF1C287F3EFD00C50298 /* DetailsViewController.swift in Sources */,
 				27B8ECF228871FA800A11B45 /* SearchViewController+Delegate.swift in Sources */,
 				27E8A2D52881F8B90008B4B8 /* MovieResponse.swift in Sources */,
+				2707900B28883DC8001DE5E4 /* SeeAllTableViewCell.swift in Sources */,
 				27CCACA12874B0B30027631D /* AppDelegate.swift in Sources */,
 				27B8ECF42887231D00A11B45 /* SearchViewController+SearchResultingUpdating.swift in Sources */,
 				27CCACA32874B0B30027631D /* SceneDelegate.swift in Sources */,

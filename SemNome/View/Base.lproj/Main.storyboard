@@ -146,7 +146,7 @@
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="See all">
                                                                             <backgroundConfiguration key="background" cornerRadius="24">
-                                                                                <color key="backgroundColor" red="0.52941179279999995" green="0.14509806040000001" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                <color key="backgroundColor" red="0.52941176470588236" green="0.14509803921568626" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             </backgroundConfiguration>
                                                                         </buttonConfiguration>
                                                                         <connections>
@@ -619,7 +619,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="798"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="seeAllCell" rowHeight="122" id="Hiy-lK-uAA" customClass="TrendingSearchTableViewCell" customModule="SemNome" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="seeAllCell" rowHeight="122" id="Hiy-lK-uAA" customClass="SeeAllTableViewCell" customModule="SemNome" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hiy-lK-uAA" id="417-hI-8Bm">
@@ -627,19 +627,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tti-GW-hsR">
-                                                    <rect key="frame" x="92" y="23" width="246" height="76"/>
+                                                    <rect key="frame" x="92" y="23" width="182" height="76"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="&lt;titleLabel&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlE-Lo-6cM">
-                                                            <rect key="frame" x="0.0" y="0.0" width="246" height="21.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="182" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="vyu-Oq-KhS">
-                                                            <rect key="frame" x="0.0" y="21.5" width="246" height="54.5"/>
+                                                            <rect key="frame" x="0.0" y="21.5" width="182" height="54.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;yearLabel&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kB8-cL-JCR">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="246" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -655,22 +655,33 @@
                                                         <constraint firstAttribute="width" constant="60" id="CZ6-hC-NDT"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="86Q-JE-vvE">
-                                                    <rect key="frame" x="362" y="53" width="8" height="15"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="TGA-wR-wCm">
+                                                    <rect key="frame" x="290" y="27" width="88" height="68"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zRz-yM-9Wz">
+                                                            <rect key="frame" x="0.0" y="-0.5" width="30.5" height="20"/>
+                                                            <color key="tintColor" red="0.52941176470588236" green="0.14509803921568626" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="&lt;rating&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Det-uI-JM7">
+                                                            <rect key="frame" x="36.5" y="0.0" width="51.5" height="16"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.08235294118" green="0.08235294118" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Tti-GW-hsR" secondAttribute="trailing" constant="56" id="2dr-2H-zpY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="TGA-wR-wCm" secondAttribute="bottom" constant="16" id="1LI-GR-xeu"/>
                                                 <constraint firstAttribute="bottom" secondItem="Csb-IG-JgU" secondAttribute="bottom" constant="12" id="BsL-De-ZQd"/>
-                                                <constraint firstItem="86Q-JE-vvE" firstAttribute="centerY" secondItem="417-hI-8Bm" secondAttribute="centerY" id="J27-dL-yW6"/>
+                                                <constraint firstItem="TGA-wR-wCm" firstAttribute="leading" secondItem="Tti-GW-hsR" secondAttribute="trailing" constant="16" id="DDP-M3-zGD"/>
                                                 <constraint firstItem="Csb-IG-JgU" firstAttribute="leading" secondItem="417-hI-8Bm" secondAttribute="leading" constant="16" id="T56-Vg-Hzp"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="86Q-JE-vvE" secondAttribute="trailing" constant="24" id="dOt-Wl-als"/>
-                                                <constraint firstItem="86Q-JE-vvE" firstAttribute="leading" secondItem="Tti-GW-hsR" secondAttribute="trailing" constant="24" id="dXs-kN-u8k"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Tti-GW-hsR" secondAttribute="trailing" constant="120" id="Z8C-gm-fPJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="TGA-wR-wCm" secondAttribute="trailing" constant="16" id="aak-Dn-gTz"/>
                                                 <constraint firstItem="Tti-GW-hsR" firstAttribute="leading" secondItem="Csb-IG-JgU" secondAttribute="trailing" constant="16" id="dbF-rq-ehV"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Tti-GW-hsR" secondAttribute="bottom" constant="12" id="hXR-Va-O5e"/>
+                                                <constraint firstItem="TGA-wR-wCm" firstAttribute="top" secondItem="417-hI-8Bm" secondAttribute="topMargin" constant="16" id="idC-Uh-sbI"/>
                                                 <constraint firstItem="Tti-GW-hsR" firstAttribute="top" secondItem="417-hI-8Bm" secondAttribute="topMargin" constant="12" id="orj-ol-aUr"/>
                                                 <constraint firstItem="Csb-IG-JgU" firstAttribute="top" secondItem="417-hI-8Bm" secondAttribute="top" constant="12" id="pt2-1Q-wcx"/>
                                             </constraints>
@@ -678,9 +689,10 @@
                                         <color key="backgroundColor" red="0.08235294118" green="0.08235294118" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <outlet property="posterImage" destination="Csb-IG-JgU" id="ldb-kU-1IT"/>
-                                            <outlet property="titleLabel" destination="UlE-Lo-6cM" id="dbh-a6-fQl"/>
-                                            <outlet property="yearLabel" destination="kB8-cL-JCR" id="Azv-QW-fSc"/>
+                                            <outlet property="dateLabel" destination="kB8-cL-JCR" id="Lru-QQ-H0n"/>
+                                            <outlet property="posterImage" destination="Csb-IG-JgU" id="OnA-Bt-kRA"/>
+                                            <outlet property="ratingLabel" destination="Det-uI-JM7" id="Q3a-7W-U7F"/>
+                                            <outlet property="titleLabel" destination="UlE-Lo-6cM" id="CS8-rn-nsz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -877,7 +889,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="hvb-W6-RJv">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.082327447829999997" green="0.08220102638" blue="0.090506114070000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.71791571379999997" green="0.1148053631" blue="0.13920634979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
@@ -911,7 +923,7 @@
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" estimatedRowHeight="122" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AuS-mo-2MB">
                                 <rect key="frame" x="0.0" y="187" width="414" height="626"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trendingCell" rowHeight="122" id="BSp-Cq-8Qr" customClass="TrendingSearchTableViewCell" customModule="SemNome" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="122"/>
@@ -1008,7 +1020,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="EFW-He-hcc"/>
         <segue reference="Ko0-QB-Hhk"/>
-        <segue reference="9K6-nK-Eq8"/>
+        <segue reference="txm-fj-XZz"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
